@@ -1,6 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 
 public class App {
 
@@ -15,12 +19,13 @@ public class App {
             System.out.println("6 - Prime");
             System.out.println("0 - Exit");
             System.out.print("Your choice: ");
-            String input = Cli.scanner.nextLine();
+            String input = Cli.SCANNER.nextLine();
 
             if ("0".equals(input)) {
                 break;
             } else if ("1".equals(input)) {
                 Cli.askName();
+                break;
             } else if ("2".equals(input)) {
                 Even.game();
             } else if ("3".equals(input)) {
