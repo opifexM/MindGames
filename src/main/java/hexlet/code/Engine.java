@@ -2,14 +2,14 @@ package hexlet.code;
 
 public class Engine {
     public static void gameStart(String intro) {
-        if (Cli.USER_NAME.isEmpty()) {
+        if (Cli.getUserName().isEmpty()) {
             Cli.askName();
         }
         System.out.println(intro);
     }
 
     public static void gameFinish() {
-        System.out.println("Congratulations, " + Cli.USER_NAME + "!");
+        System.out.println("Congratulations, " + Cli.getUserName() + "!");
     }
 
     public static int random(int min, int max) {
@@ -31,7 +31,7 @@ public class Engine {
         } else {
             System.out.println();
         }
-        System.out.println("Let's try again, " + Cli.USER_NAME + "!");
+        System.out.println("Let's try again, " + Cli.getUserName() + "!");
     }
 
 }

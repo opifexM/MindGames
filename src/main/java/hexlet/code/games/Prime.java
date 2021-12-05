@@ -6,10 +6,11 @@ import hexlet.code.Engine;
 public class Prime {
     private final static int MIN_RANGE = 1;
     private final static int MAX_RANGE = 99;
+    private final static int NUMBERS_OF_GAMES = 3;
 
     public static void game() {
         Engine.gameStart("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < NUMBERS_OF_GAMES; i++) {
             int number = Engine.random(MIN_RANGE, MAX_RANGE);
             boolean answer = isPrime(number);
             Engine.printQuestion(number + "");

@@ -6,6 +6,7 @@ import hexlet.code.Engine;
 public class Progression {
     private final static int MIN_RANGE = 1;
     private final static int MAX_RANGE = 20;
+    private final static int NUMBERS_OF_GAMES = 3;
     private final static int MIN_RANGE_FOR_STEP = 1;
     private final static int MAX_RANGE_FOR_STEP = 10;
     private final static int MIN_RANGE_FOR_TOTAL_NUMBER = 5;
@@ -13,7 +14,7 @@ public class Progression {
 
     public static void game() {
         Engine.gameStart("What number is missing in the progression?");
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < NUMBERS_OF_GAMES; i++) {
             int totalNumber = Engine.random(MIN_RANGE_FOR_TOTAL_NUMBER, MAX_RANGE_FOR_TOTAL_NUMBER);
             int hideNumber = Engine.random(1, totalNumber - 1);
             int step = Engine.random(MIN_RANGE_FOR_STEP, MAX_RANGE_FOR_STEP);
