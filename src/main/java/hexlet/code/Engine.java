@@ -32,6 +32,7 @@ public class Engine {
             System.out.println();
         }
         System.out.println("Let's try again, " + Cli.getUserName() + "!");
+        System.exit(0);
     }
 
 }
