@@ -4,9 +4,9 @@ import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 public class Prime {
-    private final static int MIN_RANGE = 1;
-    private final static int MAX_RANGE = 99;
-    private final static int NUMBERS_OF_GAMES = 3;
+    private static final int MIN_RANGE = 1;
+    private static final int MAX_RANGE = 99;
+    private static final int NUMBERS_OF_GAMES = 3;
 
     public static void game() {
         Engine.gameStart("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
@@ -25,7 +25,9 @@ public class Prime {
 
     public static boolean isPrime(final int n) {
         for (int i = 2; i < n; i++) {
-            if (n % i == 0) return false;
+            if (n % i == 0) {
+                return false;
+            }
         }
         return (n > 1);
     }

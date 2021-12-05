@@ -4,13 +4,13 @@ import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 public class Progression {
-    private final static int MIN_RANGE = 1;
-    private final static int MAX_RANGE = 20;
-    private final static int NUMBERS_OF_GAMES = 3;
-    private final static int MIN_RANGE_FOR_STEP = 1;
-    private final static int MAX_RANGE_FOR_STEP = 10;
-    private final static int MIN_RANGE_FOR_TOTAL_NUMBER = 5;
-    private final static int MAX_RANGE_FOR_TOTAL_NUMBER = 10;
+    private static final int MIN_RANGE = 1;
+    private static final int MAX_RANGE = 20;
+    private static final int NUMBERS_OF_GAMES = 3;
+    private static final int MIN_RANGE_FOR_STEP = 1;
+    private static final int MAX_RANGE_FOR_STEP = 10;
+    private static final int MIN_RANGE_FOR_TOTAL_NUMBER = 5;
+    private static final int MAX_RANGE_FOR_TOTAL_NUMBER = 10;
 
     public static void game() {
         Engine.gameStart("What number is missing in the progression?");

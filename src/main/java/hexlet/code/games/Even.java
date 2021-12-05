@@ -4,9 +4,9 @@ import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 public class Even {
-    private final static int MIN_RANGE = 1;
-    private final static int MAX_RANGE = 99;
-    private final static int NUMBERS_OF_GAMES = 3;
+    private static final int MIN_RANGE = 1;
+    private static final int MAX_RANGE = 99;
+    private static final int NUMBERS_OF_GAMES = 3;
 
     public static void game() {
         Engine.gameStart("Answer 'yes' if number even otherwise answer 'no'.");

@@ -5,16 +5,16 @@ import java.util.Scanner;
 
 public class Cli {
     public static final Scanner SCANNER = new Scanner(System.in);
-    private static String USER_NAME = "";
+    private static String userName = "";
 
     public static String getUserName() {
-        return USER_NAME;
+        return userName;
     }
 
     public static void askName() {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        USER_NAME = SCANNER.nextLine();
-        System.out.println("Hello, " + USER_NAME + "!");
+        userName = SCANNER.nextLine();
+        System.out.println("Hello, " + userName + "!");
     }
 }
