@@ -21,6 +21,7 @@ public class Prime {
                 Engine.printWrong(input, answer + "");
             }
         }
+        Engine.gameFinish();
     }
 
     public static boolean isPrime(final int n) {
