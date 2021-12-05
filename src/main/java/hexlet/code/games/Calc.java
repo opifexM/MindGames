@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Cli;
 import hexlet.code.Engine;
 
-import java.util.Random;
-
 public class Calc {
     public static void game() {
         Engine.gameStart("Answer 'yes' if number even otherwise answer 'no'.");
@@ -16,7 +14,7 @@ public class Calc {
 
             Engine.printQuestion(number1 + " " + action + " " + number2);
             int input = Integer.parseInt(Cli.scanner.nextLine());
-            int answer = 0;
+            int answer;
             if (action == '+') {
                 answer = number1 + number2;
             } else if (action == '-') {
