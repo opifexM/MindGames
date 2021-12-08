@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 public class GCD {
@@ -22,7 +21,7 @@ public class GCD {
                 }
             }
             int answer = a;
-            int input = Integer.parseInt(Cli.SCANNER.nextLine());
+            int input = Integer.parseInt(Engine.SCANNER.nextLine());
             if (answer == input) {
                 Engine.printCorrect();
             } else {

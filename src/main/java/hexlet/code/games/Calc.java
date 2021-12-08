@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 public class Calc {
@@ -17,7 +16,7 @@ public class Calc {
             char action = chars.charAt(Engine.random(1, chars.length() - 1));
 
             Engine.printQuestion(number1 + " " + action + " " + number2);
-            int input = Integer.parseInt(Cli.SCANNER.nextLine());
+            int input = Integer.parseInt(Engine.SCANNER.nextLine());
             int answer;
             if (action == '+') {
                 answer = number1 + number2;

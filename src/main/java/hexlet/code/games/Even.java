@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 public class Even {
@@ -13,7 +12,7 @@ public class Even {
         for (int i = 0; i < NUMBERS_OF_GAMES; i++) {
             int number = Engine.random(MIN_RANGE, MAX_RANGE);
             Engine.printQuestion(number + "");
-            String input = Cli.SCANNER.nextLine();
+            String input = Engine.SCANNER.nextLine();
             if (("yes".equals(input) && (number % 2 == 0)) || ("no".equals(input) && (number % 2 != 0))) {
                 Engine.printCorrect();
             } else {

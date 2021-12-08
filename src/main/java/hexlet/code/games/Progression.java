@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 public class Progression {
@@ -31,7 +30,7 @@ public class Progression {
                 number += step;
             }
             Engine.printQuestion(text.toString());
-            int input = Integer.parseInt(Cli.SCANNER.nextLine());
+            int input = Integer.parseInt(Engine.SCANNER.nextLine());
             if (answer == input) {
                 Engine.printCorrect();
             } else {
