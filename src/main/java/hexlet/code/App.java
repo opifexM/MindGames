@@ -19,7 +19,7 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
-        String input = Engine.SCANNER.nextLine();
+        String input = Utils.SCANNER.nextLine();
 
         switch (input) {
             case "0" -> System.out.println("Exit.");

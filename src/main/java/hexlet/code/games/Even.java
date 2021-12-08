@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Even {
     private static final int MIN_RANGE = 1;
@@ -10,14 +11,15 @@ public class Even {
     public static void game() {
         Engine.gameStart("Answer 'yes' if number even otherwise answer 'no'.");
         for (int i = 0; i < NUMBERS_OF_GAMES; i++) {
-            int number = Engine.random(MIN_RANGE, MAX_RANGE);
-            Engine.printQuestion(number + "");
-            String input = Engine.SCANNER.nextLine();
-            if (("yes".equals(input) && (number % 2 == 0)) || ("no".equals(input) && (number % 2 != 0))) {
-                Engine.printCorrect();
+            int number = Utils.random(MIN_RANGE, MAX_RANGE);
+            String answer;
+            if (number % 2 == 0) {
+                answer = "yes";
             } else {
-                Engine.printWrong(input, "");
+                answer = "no";
             }
+            Engine.printQuestion(number + "");
+            Engine.checkAnswer(answer);
         }
         Engine.gameFinish();
     }
