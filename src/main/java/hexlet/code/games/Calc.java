@@ -23,13 +23,11 @@ public class Calc {
     }
 
     private static int getAnswer(int number1, int number2, String action) {
-        int calculation = 0;
-        switch (action) {
-            case "+" -> calculation = number1 + number2;
-            case "-" -> calculation = number1 - number2;
-            case "*" -> calculation = number1 * number2;
-            default -> System.out.println("Calc - Error");
-        }
-        return calculation;
+        return switch (action) {
+            case "+" -> number1 + number2;
+            case "-" -> number1 - number2;
+            case "*" -> number1 * number2;
+            default -> -1;
+        };
     }
 }
