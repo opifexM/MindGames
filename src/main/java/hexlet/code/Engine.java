@@ -13,10 +13,10 @@ public class Engine {
         System.out.println("Correct!");
     }
 
-    public static void printWrong(String input, String answer) {
-        System.out.print("'" + input + "' is wrong answer ;(.");
-        if (!answer.isEmpty()) {
-            System.out.println(" Correct answer was '" + answer + "'.");
+    public static void printWrong(String userAnswer, String correctAnswer) {
+        System.out.print("'" + userAnswer + "' is wrong answer ;(.");
+        if (!correctAnswer.isEmpty()) {
+            System.out.println(" Correct answer was '" + correctAnswer + "'.");
         } else {
             System.out.println();
         }
