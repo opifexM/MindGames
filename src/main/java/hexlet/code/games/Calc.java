@@ -4,28 +4,32 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Calc {
-    private static final int MIN_RANGE = 1;
-    private static final int MAX_RANGE = 99;
-    private static final int NUMBERS_OF_GAMES = 3;
+    private static final String INTRO = "Answer 'yes' if number even otherwise answer 'no'.";
+    private static final String[] OPERATIONS = new String[]{"+", "-", "*"};
 
     public static void game() {
-        Engine.gameStart("Answer 'yes' if number even otherwise answer 'no'.");
-        for (int i = 0; i < NUMBERS_OF_GAMES; i++) {
-            int number1 = Utils.random(MIN_RANGE, MAX_RANGE);
-            int number2 = Utils.random(MIN_RANGE, MAX_RANGE);
-            String chars = "+-*";
-            char action = chars.charAt(Utils.random(1, chars.length() - 1));
-            int answer;
-            if (action == '+') {
-                answer = number1 + number2;
-            } else if (action == '-') {
-                answer = number1 - number2;
-            } else {
-                answer = number1 * number2;
-            }
-            Engine.printQuestion(number1 + " " + action + " " + number2);
-            Engine.checkAnswer(answer + "");
+        String[] questionAnswer = new String[Utils.DEFAULT_NUMBERS_OF_GAMES * 2];
+
+        for (int i = 0; i < Utils.DEFAULT_NUMBERS_OF_GAMES * 2; i += 2) {
+            int number1 = Utils.random(Utils.DEFAULT_MIN_RANGE, Utils.DEFAULT_MAX_RANGE);
+            int number2 = Utils.random(Utils.DEFAULT_MIN_RANGE, Utils.DEFAULT_MAX_RANGE);
+            String action = OPERATIONS[Utils.random(1, OPERATIONS.length - 1)];
+
+            questionAnswer[i] = number1 + " " + action + " " + number2;
+            questionAnswer[i + 1] = String.valueOf(getAnswer(number1, number2, action));
         }
-        Engine.gameFinish();
+
+        Engine.runGame(INTRO, Utils.DEFAULT_NUMBERS_OF_GAMES, questionAnswer);
+    }
+
+    private static int getAnswer(int number1, int number2, String action) {
+        int calculation = 0;
+        switch (action) {
+            case "+" -> calculation = number1 + number2;
+            case "-" -> calculation = number1 - number2;
+            case "*" -> calculation = number1 * number2;
+            default -> System.out.println("Calc - Error");
+        }
+        return calculation;
     }
 }

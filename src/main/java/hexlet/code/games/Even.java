@@ -4,23 +4,17 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Even {
-    private static final int MIN_RANGE = 1;
-    private static final int MAX_RANGE = 99;
-    private static final int NUMBERS_OF_GAMES = 3;
+    private static final String INTRO = "Answer 'yes' if number even otherwise answer 'no'.";
 
     public static void game() {
-        Engine.gameStart("Answer 'yes' if number even otherwise answer 'no'.");
-        for (int i = 0; i < NUMBERS_OF_GAMES; i++) {
-            int number = Utils.random(MIN_RANGE, MAX_RANGE);
-            String answer;
-            if (number % 2 == 0) {
-                answer = "yes";
-            } else {
-                answer = "no";
-            }
-            Engine.printQuestion(number + "");
-            Engine.checkAnswer(answer);
+        String[] questionAnswer = new String[Utils.DEFAULT_NUMBERS_OF_GAMES * 2];
+        for (int i = 0; i < Utils.DEFAULT_NUMBERS_OF_GAMES * 2; i += 2) {
+            int number = Utils.random(Utils.DEFAULT_MIN_RANGE, Utils.DEFAULT_MAX_RANGE);
+
+            questionAnswer[i] = number + "";
+            questionAnswer[i + 1] = (number % 2 == 0) ? "yes" : "no";
         }
-        Engine.gameFinish();
+
+        Engine.runGame(INTRO, Utils.DEFAULT_NUMBERS_OF_GAMES, questionAnswer);
     }
 }

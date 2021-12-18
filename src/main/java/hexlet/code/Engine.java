@@ -2,23 +2,11 @@ package hexlet.code;
 
 public class Engine {
     private static String userName = "";
+    private static String input = "";
 
 
-    public static void gameStart(String intro) {
-        if (getUserName().isEmpty()) {
-            sayHello();
-        }
-        System.out.println(intro);
-    }
-
-
-    public static void gameFinish() {
+    public static void printCongrats() {
         System.out.println("Congratulations, " + getUserName() + "!");
-    }
-
-
-    public static void printQuestion(String text) {
-        System.out.println("Question: " + text);
     }
 
     public static void printCorrect() {
@@ -33,6 +21,9 @@ public class Engine {
             System.out.println();
         }
         System.out.println("Let's try again, " + getUserName() + "!");
+    }
+
+    private static void stopGame() {
         System.exit(0);
     }
 
@@ -47,13 +38,29 @@ public class Engine {
         return userName;
     }
 
+    public static boolean isAnswerCorrect(String answer) {
+        input = Utils.SCANNER.nextLine();
+        return answer.equals(input);
+    }
 
-    public static void checkAnswer(String answer) {
-        String input = Utils.SCANNER.nextLine();
-        if (answer.equals(input)) {
-            Engine.printCorrect();
-        } else {
-            Engine.printWrong(input, answer);
+    public static void runGame(String intro, int numbersOfGames, String[] questionAnswer) {
+        if (getUserName().isEmpty()) {
+            sayHello();
         }
+        System.out.println(intro);
+
+        for (int i = 0; i < numbersOfGames * 2; i += 2) {
+            String question = questionAnswer[i];
+            String answer = questionAnswer[i + 1];
+
+            System.out.println("Question: " + question);
+            if (isAnswerCorrect(answer)) {
+                Engine.printCorrect();
+            } else {
+                Engine.printWrong(input, answer);
+                stopGame();
+            }
+        }
+        printCongrats();
     }
 }

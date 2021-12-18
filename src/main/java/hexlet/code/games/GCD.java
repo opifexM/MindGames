@@ -4,26 +4,28 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class GCD {
-    private static final int MIN_RANGE = 1;
-    private static final int MAX_RANGE = 99;
-    private static final int NUMBERS_OF_GAMES = 3;
+    private static final String INTRO = "Find the greatest common divisor of given numbers.";
 
     public static void game() {
-        Engine.gameStart("Find the greatest common divisor of given numbers.");
-        for (int i = 0; i < NUMBERS_OF_GAMES; i++) {
-            int a = Utils.random(MIN_RANGE, MAX_RANGE);
-            int b = Utils.random(MIN_RANGE, MAX_RANGE);
-            Engine.printQuestion(a + " " + b);
-            while (a != b) {
-                if (a > b) {
-                    a = a - b;
-                } else {
-                    b = b - a;
-                }
-            }
-            int answer = a;
-            Engine.checkAnswer(answer + "");
+        String[] questionAnswer = new String[Utils.DEFAULT_NUMBERS_OF_GAMES * 2];
+        for (int i = 0; i < Utils.DEFAULT_NUMBERS_OF_GAMES * 2; i += 2) {
+            int a = Utils.random(Utils.DEFAULT_MIN_RANGE, Utils.DEFAULT_MAX_RANGE);
+            int b = Utils.random(Utils.DEFAULT_MIN_RANGE, Utils.DEFAULT_MAX_RANGE);
+
+            questionAnswer[i] = a + " " + b;
+            questionAnswer[i + 1] = String.valueOf(findGreatestDivisor(a, b));
         }
-        Engine.gameFinish();
+        Engine.runGame(INTRO, Utils.DEFAULT_NUMBERS_OF_GAMES, questionAnswer);
+    }
+
+    private static int findGreatestDivisor(int a, int b) {
+        while (a != b) {
+            if (a > b) {
+                a = a - b;
+            } else {
+                b = b - a;
+            }
+        }
+        return a;
     }
 }
