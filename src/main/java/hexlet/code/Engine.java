@@ -23,6 +23,7 @@ public class Engine {
                 System.out.println(" Correct answer was '" + answer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 isWin = false;
+                break;
             }
         }
         if (isWin) {
