@@ -15,7 +15,7 @@ public class GCD {
             questionAnswer[i] = a + " " + b;
             questionAnswer[i + 1] = String.valueOf(findGreatestDivisor(a, b));
         }
-        Engine.runGame(INTRO, Utils.DEFAULT_NUMBERS_OF_GAMES, questionAnswer);
+        Engine.runGame(INTRO, questionAnswer);
     }
 
     private static int findGreatestDivisor(int a, int b) {

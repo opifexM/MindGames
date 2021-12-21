@@ -35,7 +35,7 @@ public class Progression {
             questionAnswer[i + 1] = String.valueOf(answer);
 
         }
-        Engine.runGame(INTRO, Utils.DEFAULT_NUMBERS_OF_GAMES, questionAnswer);
+        Engine.runGame(INTRO, questionAnswer);
 
     }
 }

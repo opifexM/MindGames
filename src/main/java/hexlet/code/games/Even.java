@@ -15,6 +15,6 @@ public class Even {
             questionAnswer[i + 1] = (number % 2 == 0) ? "yes" : "no";
         }
 
-        Engine.runGame(INTRO, Utils.DEFAULT_NUMBERS_OF_GAMES, questionAnswer);
+        Engine.runGame(INTRO, questionAnswer);
     }
 }

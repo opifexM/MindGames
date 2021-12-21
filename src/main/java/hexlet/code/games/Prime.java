@@ -14,7 +14,7 @@ public class Prime {
             questionAnswer[i] = number + "";
             questionAnswer[i + 1] = (isPrime(number)) ? "yes" : "no";
         }
-        Engine.runGame(INTRO, Utils.DEFAULT_NUMBERS_OF_GAMES, questionAnswer);
+        Engine.runGame(INTRO, questionAnswer);
     }
 
     public static boolean isPrime(final int n) {
