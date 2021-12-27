@@ -8,9 +8,9 @@ public class Calc {
     private static final String[] OPERATIONS = new String[]{"+", "-", "*"};
 
     public static void game() {
-        String[] questionAnswer = new String[Utils.DEFAULT_NUMBERS_OF_GAMES * 2];
+        String[] questionAnswer = new String[Engine.DEFAULT_NUMBERS_OF_GAMES * 2];
 
-        for (int i = 0; i < Utils.DEFAULT_NUMBERS_OF_GAMES * 2; i += 2) {
+        for (int i = 0; i < Engine.DEFAULT_NUMBERS_OF_GAMES * 2; i += 2) {
             int number1 = Utils.random(Utils.DEFAULT_MIN_RANGE, Utils.DEFAULT_MAX_RANGE);
             int number2 = Utils.random(Utils.DEFAULT_MIN_RANGE, Utils.DEFAULT_MAX_RANGE);
             String action = OPERATIONS[Utils.random(0, OPERATIONS.length - 1)];

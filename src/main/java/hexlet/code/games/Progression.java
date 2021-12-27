@@ -14,8 +14,8 @@ public class Progression {
 
 
     public static void game() {
-        String[] questionAnswer = new String[Utils.DEFAULT_NUMBERS_OF_GAMES * 2];
-        for (int i = 0; i < Utils.DEFAULT_NUMBERS_OF_GAMES * 2; i += 2) {
+        String[] questionAnswer = new String[Engine.DEFAULT_NUMBERS_OF_GAMES * 2];
+        for (int i = 0; i < Engine.DEFAULT_NUMBERS_OF_GAMES * 2; i += 2) {
             int totalNumber = Utils.random(MIN_RANGE_FOR_TOTAL_NUMBER, MAX_RANGE_FOR_TOTAL_NUMBER);
             int hideNumber = Utils.random(1, totalNumber - 1);
             int step = Utils.random(MIN_RANGE_FOR_STEP, MAX_RANGE_FOR_STEP);
